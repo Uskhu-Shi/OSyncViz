@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: 250 249 246;
+  --panel: 255 255 255;
+  --ink: 22 24 22;
+  --line: 22 24 22;
+  --accent: 33 92 71;      /* deep terminal green */
+  --accent2: 176 82 40;    /* burnt signal orange */
+  --good: 33 122 79;
+  --warn: 176 82 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  background-color: rgb(var(--paper));
+  color: rgb(var(--ink));
+  background-image:
+    linear-gradient(rgb(var(--ink) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink) / 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.25);
+}
+
+/* thin, technical scrollbars */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--ink) / 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--ink) / 0.25);
+  border-radius: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.switch-track {
+  transition: background-color 160ms ease;
+}
+.switch-thumb {
+  transition: transform 160ms ease;
+}
